@@ -35,10 +35,10 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleFreeDebug
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: lemuroid-app/build/outputs/apk/play/debug/*.apk
+          path: lemuroid-app/build/outputs/apk/free/debug/*.apk
