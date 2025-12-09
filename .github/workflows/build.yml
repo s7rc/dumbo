@@ -16,6 +16,14 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Fix missing submodules (Manual Clone)
+        run: |
+          if [ ! -d "lemuroid-cores/bundled-cores" ]; then
+            echo "Submodule missing. Cloning LemuroidCores manually..."
+            rm -rf lemuroid-cores
+            git clone https://github.com/Swordfish90/LemuroidCores.git lemuroid-cores
+          fi
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
